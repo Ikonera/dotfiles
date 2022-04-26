@@ -1,7 +1,6 @@
 ---
 - name: Install
   kewlfft.aur.aur:
-    use: yay
     name: doppler-cli
     state: latest
   become: true

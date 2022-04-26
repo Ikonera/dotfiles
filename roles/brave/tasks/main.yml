@@ -1,7 +1,6 @@
 ---
 - name: Install
   kewlfft.aur.aur:
-    use: yay
     name: brave-bin
     state: latest
   become: true
