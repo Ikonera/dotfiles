@@ -29,7 +29,7 @@ if ! [[ -e "$HOME/.ssh/id_rsa" ]]; then
 fi
 
 if ! [[ -d "$DOTFILES_DIR" ]]; then
-	git clone "https://github.com/Ikonera/dotfiles" "$DOTFILES_DIR"
+	git clone "https://github.com/Ikonera/dotfiles.git" "$DOTFILES_DIR"
 else
 	git -C "$DOTFILES_DIR" pull
 fi
