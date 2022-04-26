@@ -7,7 +7,6 @@ default_roles:
   - alacritty
   - discord
   - spotify
-  - teams
   - insomnia
   - neovim
   - nitrogen
