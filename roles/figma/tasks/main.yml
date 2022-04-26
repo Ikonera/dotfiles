@@ -3,5 +3,4 @@
   kewlfft.aur.aur:
     name: "figma-linux"
     state: latest
-  become: true
 ...

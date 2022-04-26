@@ -3,5 +3,4 @@
   kewlfft.aur.aur:
     name: brave-bin
     state: latest
-  become: true
 ...

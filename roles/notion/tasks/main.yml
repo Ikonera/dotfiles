@@ -3,5 +3,4 @@
   kewlfft.aur.aur:
     name: notion-app
     state: latest
-  become: true
 ...

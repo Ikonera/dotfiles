@@ -3,7 +3,6 @@
   kewlfft.aur.aur:
     name: insomnia
     state: latest
-  become: true
 
 - name: Config folder
   ansible.builtin.file:

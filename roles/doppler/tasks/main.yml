@@ -3,5 +3,4 @@
   kewlfft.aur.aur:
     name: doppler-cli
     state: latest
-  become: true
 ...

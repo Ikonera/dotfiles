@@ -3,5 +3,4 @@
   kewlfft.aur.aur:
     name: spotify
     state: latest
-  become: true
 ...
