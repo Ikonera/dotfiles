@@ -1,8 +1,24 @@
 default_roles:
+  - git
   - curl
   - zsh
   - bottom
   - duf
   - alacritty
-  - nnn
+  - discord
+  - spotify
+  - teams
+  - insomnia
+  - neovim
+  - nitrogen
+  - i3
+  - brave
+  - notion
+  - keepassxc
+  - doppler
+  - nodejs
+  - flameshot
+  - tmux
+  - nextcloud
+  - docker
 
