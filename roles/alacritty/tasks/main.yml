@@ -1,0 +1,30 @@
+---
+- name: Install deps
+  ansible.builtin.package:
+    name: rust
+    state: latest
+  become: true
+
+- name: Install
+  ansible.builtin.package:
+    name: "alacritty"
+    state: latest
+  become: true
+
+- name: Create folder
+  ansible.builtin.file:
+    mode: "0755"
+    path: "{{ ansible_user_dir }}/.config/alacritty"
+    state: "directory"
+
+- name: Copy theme file
+  ansible.builtin.copy:
+    src: "tokyonight-alacritty.yml"
+    dest: "{{ ansible_user_dir }}/.config/alacritty"
+
+- name: Copy config file
+  ansible.builtin.copy:
+    src: "alacritty.yml"
+    dest: "{{ ansible_user_dir }}/.config/alacritty"
+...
+

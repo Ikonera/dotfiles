@@ -1,0 +1,31 @@
+import:
+  - ~/.config/alacritty/tokyonight-alacritty.yml
+
+env:
+  WINIT_X11_SCALE_FACTOR: '1'
+
+shell:
+  program: /bin/zsh
+
+window:
+  dimensions:
+    columns: 118
+    lines: 32
+  decorations: none
+  startup_mode: Windowed
+  window_title: Terminal
+  opacity: .4
+font:
+  normal:
+    family: "JetBrainsMonoMedium NF" # "JetBrainsMono NF" || "Fura Code Nerd Font Mono"
+    style: "Medium"
+  bold:
+    family: "JetBrainsMonoMedium NF"
+    style: "Bold"
+  italic:
+    family: "JetBrainsMonoMedium NF"
+    style: "Italic"
+  bold_italic:
+    family: "JetBrainsMonoMedium NF"
+    style: "Bold Italic"
+  size: 12.0

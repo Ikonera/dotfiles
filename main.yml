@@ -1,0 +1,14 @@
+---
+- name: Automate development workflow
+  hosts: localhost
+
+  tasks:
+    - name: Set roles
+      set_fact:
+        roles: "{{ default_roles }}"
+
+    - name: Run roles
+      include_role:
+        name: "{{ item }}"
+      with_items: "{{ roles }}"
+...

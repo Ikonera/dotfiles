@@ -1,0 +1,13 @@
+---
+- name: Core
+  ansible.builtin.package:
+    name: "nodejs-lts-gallium"
+    state: latest
+  become: true
+
+- name: Yarn
+  ansible.builtin.package:
+    name: yarn
+    state: latest
+  become: true
+...

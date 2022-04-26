@@ -1,0 +1,13 @@
+---
+- name: Core
+  ansible.builtin.package:
+    name: docker
+    state: latest
+  become: true
+
+- name: Compose
+  ansible.builtin.package:
+    name: docker-compose
+    state: latest
+  become: true
+...

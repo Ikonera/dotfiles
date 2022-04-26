@@ -1,0 +1,7 @@
+---
+- name: Install
+  ansible.builtin.package:
+    name: signal-desktop
+    state: latest
+  become: true
+...

@@ -1,0 +1,13 @@
+---
+- name: Install
+  ansible.builtin.package:
+    name: zsh
+    state: latest
+  become: true
+
+- name: Change default user shell prompt
+  ansible.builtin.user:
+    name: "{{ ansible_env['USER'] }}"
+    shell: "/usr/bin/zsh"
+  become: true
+...

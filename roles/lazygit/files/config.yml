@@ -1,0 +1,14 @@
+---
+customCommands:
+  - key: 'c'
+    context: "files"
+    prompts:
+      - type: "input"
+        title: "Enter the body of the commit message:"
+        initialValue: ''
+      - type: "input"
+        title: "Enter the description of the commit message:"
+        initialValue: ''
+    command: git commit -m "{{index .PromptResponses 0}}" -m "{{index .PromptResponses 1}}"
+    loadingText: "Creating commit message"
+    description: "Create commit with a description"

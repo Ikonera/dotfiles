@@ -1,0 +1,7 @@
+---
+- name: Install
+  ansible.builtin.package:
+    name: keepassxc
+    state: latest
+  become: true
+...

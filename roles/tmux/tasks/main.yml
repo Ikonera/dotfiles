@@ -1,0 +1,12 @@
+---
+- name: Install
+  ansible.builtin.package:
+    name: tmux
+    state: latest
+  become: true
+
+- name: Copy config file
+  ansible.builtin.copy:
+    src: ".tmux.conf"
+    path: "{{ ansible_user_dir }}/.tmux.conf"
+...

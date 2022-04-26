@@ -1,0 +1,8 @@
+---
+- name: Install
+  kewlfft.aur.aur:
+    use: yay
+    name: spotify
+    state: latest
+  become: true
+...

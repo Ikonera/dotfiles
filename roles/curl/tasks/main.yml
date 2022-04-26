@@ -1,0 +1,7 @@
+---
+- name: Install
+  ansible.builtin.package:
+    name: curl
+    state: latest
+  become: true
+...

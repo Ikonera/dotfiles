@@ -1,0 +1,8 @@
+default_roles:
+  - curl
+  - zsh
+  - bottom
+  - duf
+  - alacritty
+  - nnn
+
