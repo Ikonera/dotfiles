@@ -1,0 +1,36 @@
+---
+- name: Install build deps
+  ansible.builtin.package:
+    name:
+      - meson
+      - ninja
+  become: true
+
+- name: Clone picom fork
+  ansible.builtin.git:
+    clone: yes
+    depth: 1
+    force: yes
+    dest: "{{ ansible_user_dir }}/Lab/jonaburg-picom"
+    repo: "https://github.com/jonaburg/picom.git"
+
+- name: Build
+  ansible.builtin.shell:
+    chdir: "{{ ansible_user_dir }}/Lab/jonaburg-picom"
+    cmd:
+      - git submodule update --init --recursive
+      - meson --buildtype=release . build
+      - ninja -C build
+      - ninja -C build install
+
+- name: Create config folder
+  ansible.builtin.file:
+    mode: "0755"
+    path: "{{ ansible_user_dir }}/.config/picom"
+    state: "directory"
+
+- name: Copy config file
+  ansible.builtin.copy:
+    src: "picom.conf"
+    dest: "{{ ansible_user_dir }}/.config/picom/picom.conf"
+...
