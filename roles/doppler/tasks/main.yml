@@ -1,6 +1,12 @@
 ---
-- name: Install
-  kewlfft.aur.aur:
-    name: doppler-cli
-    state: latest
+- name: Download installer
+  ansible.builtin.get_url:
+    mode: "0755"
+    dest: "/tmp/doppler-install.sh"
+    url: "https://cli.doppler.com/install.sh"
+
+- name: Run installer
+  ansible.builtin.shell:
+    cmd: /tmp/doppler-install.sh
+  become: true
 ...
