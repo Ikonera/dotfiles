@@ -1,0 +1,11 @@
+---
+- name: Install
+  ansible.builtin.shell:
+    cmd:
+      - sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+- name: Copy config file
+  ansible.builtin.copy:
+    src: ".zshrc"
+    dest: "{{ ansible_user_dir }}/.zshrc"
+...

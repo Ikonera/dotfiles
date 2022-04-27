@@ -22,6 +22,7 @@
       - meson --buildtype=release . build
       - ninja -C build
       - ninja -C build install
+  become: true
 
 - name: Create config folder
   ansible.builtin.file:
