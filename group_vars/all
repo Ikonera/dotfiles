@@ -6,7 +6,6 @@ default_roles:
   - duf
   - alacritty
   - discord
-  - spotify
   - insomnia
   - neovim
   - nitrogen
