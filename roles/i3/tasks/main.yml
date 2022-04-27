@@ -4,6 +4,7 @@
   ansible.builtin.file:
     mode: "0755"
     dest: "{{ ansible_user_dir }}/.config/i3/config"
+    state: "file"
 
 - name: Copy config file
   ansible.builtin.copy:
