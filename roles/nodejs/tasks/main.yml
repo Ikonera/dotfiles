@@ -1,4 +1,10 @@
 ---
+- name: Uninstall nodejs first
+  ansible.builtin.package:
+    name: nodejs
+    state: absent
+  become: true
+
 - name: Core
   ansible.builtin.package:
     name: "nodejs-lts-gallium"
