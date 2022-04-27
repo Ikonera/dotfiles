@@ -1,7 +1,7 @@
 ---
 - name: Install
   ansible.builtin.package:
-    name: flasmeshot
+    name: flameshot
     state: latest
   become: true
 ...
