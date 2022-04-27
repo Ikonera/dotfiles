@@ -6,6 +6,7 @@ default_roles:
   - duf
   - alacritty
   - discord
+  - nodejs
   - insomnia
   - neovim
   - nitrogen
@@ -14,7 +15,6 @@ default_roles:
   - notion
   - keepassxc
   - doppler
-  - nodejs
   - flameshot
   - tmux
   - nextcloud
