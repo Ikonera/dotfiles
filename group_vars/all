@@ -7,7 +7,6 @@ default_roles:
   - alacritty
   - discord
   - nodejs
-  - insomnia
   - neovim
   - nitrogen
   - i3
