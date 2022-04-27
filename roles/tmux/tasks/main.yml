@@ -8,10 +8,10 @@
 - name: Copy config file
   ansible.builtin.copy:
     src: ".tmux.conf"
-    path: "{{ ansible_user_dir }}/.tmux.conf"
+    dest: "{{ ansible_user_dir }}/.tmux.conf"
 
 - name: Copy config folder
   ansible.builtin.copy:
     src: ".tmux"
-    path: "{{ ansible_user_dir }}/"
+    dest: "{{ ansible_user_dir }}/"
 ...
