@@ -1,13 +1,8 @@
 ---
 # don't need installation step in case of applying onto a system that already have i3-gaps installed.
-- name: Config folder
-  ansible.builtin.file:
-    mode: "0755"
-    dest: "{{ ansible_user_dir }}/.config/i3/config"
-    state: "touch"
-
 - name: Copy config file
   ansible.builtin.copy:
     src: "config"
     dest: "{{ ansible_user_dir }}/.config/i3/config"
+    mode: "0755"
 ...
