@@ -1,8 +1,38 @@
 ---
-- name: Install
-  ansible.builtin.package:
-    name: neovim
-    state: latest
+- name: Verify installation
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/Lab/neovim"
+  register: install
+
+- name: Clone nightly version from github
+  ansible.builtin.git:
+    depth: 1
+    repo: "git@github.com:neovim/neovim.git"
+    dest: "{{ ansible_user_dir }}/Lab/neovim"
+    single_branch: yes
+    version: "nightly"
+    update: yes
+  register: clone
+  when: not install.stat.exists
+
+- name: Install deps
+  community.general.make:
+    chdir: "{{ ansible_user_dir }}/Lab/neovim"
+    params:
+      CMAKE_BUILD_TYPE: RelWithDebInfo
+  when: clone.changed
+
+- name: Remove build folder
+  community.general.make:
+    chdir: "{{ ansible_user_dir }}/Lab/neovim"
+    target: distclean
+  become: true
+  when: clone.changed
+
+- name: Install neovim
+  community.general.make:
+    chdir: "{{ ansible_user_dir }}/Lab/neovim"
+    target: install
   become: true
 
 - name: Config folder
@@ -10,6 +40,7 @@
     mode: "0755"
     path: "{{ ansible_user_dir }}/.config/nvim"
     state: "directory"
+  when: not install.stat.exists
 
 - name: Copy init.lua
   ansible.builtin.copy:
