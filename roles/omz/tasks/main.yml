@@ -1,13 +1,20 @@
 ---
+- name: verify installation
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.oh-my-zsh"
+  register: install
+
 - name: Download installer
   ansible.builtin.get_url:
     mode: "0755"
     dest: "/tmp/omz-installer.sh"
     url: "https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+  when: not install.stat.exists
 
 - name: Run installer
   ansible.builtin.shell:
     cmd: "/tmp/omz-installer.sh"
+  when: not install.stat.exists
 
 - name: Remove omz installer
   file:
@@ -18,4 +25,5 @@
   ansible.builtin.copy:
     src: ".zshrc"
     dest: "{{ ansible_user_dir }}/.zshrc"
+  when: not install.stat.exists
 ...
