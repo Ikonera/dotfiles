@@ -14,7 +14,7 @@ window:
   decorations: none
   startup_mode: Windowed
   window_title: Terminal
-  opacity: .4
+  opacity: .7
 font:
   normal:
     family: "JetBrainsMonoMedium NF" # "JetBrainsMono NF" || "Fura Code Nerd Font Mono"
