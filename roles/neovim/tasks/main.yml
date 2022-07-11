@@ -7,26 +7,31 @@
 - name: Clone nightly version from github
   ansible.builtin.git:
     depth: 1
-    repo: "git@github.com:neovim/neovim.git"
+    repo: "https://github.com/neovim/neovim.git"
     dest: "{{ ansible_user_dir }}/Lab/neovim"
     single_branch: yes
     version: "nightly"
     update: yes
+    force: yes
   register: clone
-  when: not install.stat.exists
+
+- name: Verify build folder
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/Lab/neovim/build"
+  register: build_folder
+
+- name: Delete build folder
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/Lab/neovim/build"
+    state: "absent"
+  become: true
+  when: build_folder.stat.exists
 
 - name: Install deps
   community.general.make:
     chdir: "{{ ansible_user_dir }}/Lab/neovim"
     params:
       CMAKE_BUILD_TYPE: RelWithDebInfo
-  when: clone.changed
-
-- name: Remove build folder
-  community.general.make:
-    chdir: "{{ ansible_user_dir }}/Lab/neovim"
-    target: distclean
-  become: true
   when: clone.changed
 
 - name: Install neovim
