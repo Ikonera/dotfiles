@@ -20,11 +20,10 @@
     path: "{{ ansible_user_dir }}/Lab/neovim/build"
   register: build_folder
 
-- name: Delete build folder
-  ansible.builtin.file:
-    path: "{{ ansible_user_dir }}/Lab/neovim/build"
-    state: "absent"
-  become: true
+- name: Distclean
+  community.general.make:
+    chdir: "{{ ansible_user_dir }}/Lab/neovim"
+    target: distclean
   when: build_folder.stat.exists
 
 - name: Install deps
