@@ -14,17 +14,7 @@
     update: yes
     force: yes
   register: clone
-
-- name: Verify build folder
-  ansible.builtin.stat:
-    path: "{{ ansible_user_dir }}/Lab/neovim/build"
-  register: build_folder
-
-- name: Distclean
-  community.general.make:
-    chdir: "{{ ansible_user_dir }}/Lab/neovim"
-    target: distclean
-  when: build_folder.stat.exists
+  when: not install.stat.exists
 
 - name: Install deps
   community.general.make:
@@ -49,11 +39,11 @@
 - name: Copy init.lua
   ansible.builtin.copy:
     src: "init.lua"
-    dest: "{{ ansible_user_dir }}/.config/nvim"
+    dest: "{{ ansible_user_dir }}/.config/nvim/"
 
 - name: Copy lua folder
   ansible.builtin.copy:
     src: "lua"
-    dest: "{{ ansible_user_dir }}/.config/nvim"
+    dest: "{{ ansible_user_dir }}/.config/nvim/"
 ...
 
