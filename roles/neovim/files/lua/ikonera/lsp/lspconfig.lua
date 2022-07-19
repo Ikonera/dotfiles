@@ -1,16 +1,28 @@
 
 -- LSP Config
-local lsp = require"nvim-lsp-installer"
-local luadev = require("lua-dev")
+local lspinstall = require"nvim-lsp-installer"
+local lspconfig = require"lspconfig"
 
-lsp.on_server_ready(function(server)
+lspinstall.setup {
+	ensure_installed = {
+		"rust_analyser",
+		"prismals",
+		"sumneko_lua",
+		"tsserver",
+		"ansiblels",
+		"dockerls",
+		"yamlls",
+	},
+	automatic_installation = true,
+	ui = {
+		icons = {
+			server_installed = "✓",
+			server_pending = "➜",
+			server_uninstalled = "✗",
+		}
+	}
+}
 
-	local opts = {}
-
-	if server.name == "sumneko_lua" then
-		opts = luadev.setup()
-	end
-
-	server:setup(opts)
-
-end)
+for _, server in ipairs(lspinstall.get_installed_servers()) do
+	lspconfig[server.name].setup{}
+end
