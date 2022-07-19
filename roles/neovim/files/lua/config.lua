@@ -39,9 +39,9 @@ g.tokyonight_italic_variables = true
 g.tokyonight_italic_keywords = true
 g.tokyonight_terminal_colors = true
 g.tokyonight_dark_float = false
--- g.tokyonight_colors = {
---	bg_float = "none"
--- }
+g.tokyonight_colors = {
+	bg_float = "none"
+}
 g.syntax_on = true
 
 -- Vim commands that don't work with Lua
