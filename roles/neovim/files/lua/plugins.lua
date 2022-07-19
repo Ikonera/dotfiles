@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
 
   -- Pairing
   use {'windwp/nvim-autopairs'}
+  use 'terrortylor/nvim-comment'
 
   -- Emmet
   use 'mattn/emmet-vim'

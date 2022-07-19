@@ -11,6 +11,7 @@ require("ikonera.gitsigns")
 require("ikonera.prettier")
 require("ikonera.notify")
 require("ikonera.colorizer")
+require("ikonera.comment")
 require("pairs")
 require("mappings")
 
