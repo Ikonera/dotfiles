@@ -21,4 +21,10 @@
     name: yarn
     state: latest
   become: true
+
+- name: Npm
+  ansible.builtin.package:
+    name: npm
+    state: latest
+  become: true
 ...
