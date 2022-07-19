@@ -4,17 +4,17 @@
     path: "{{ ansible_user_dir }}/Lab/neovim"
   register: install
 
-- name: Clone nightly version from github
+- name: Clone stable version from github
   ansible.builtin.git:
     depth: 1
     repo: "https://github.com/neovim/neovim.git"
     dest: "{{ ansible_user_dir }}/Lab/neovim"
     single_branch: yes
-    version: "nightly"
+    version: "stable"
+    clone: yes
     update: yes
     force: yes
   register: clone
-  when: not install.stat.exists
 
 - name: Install deps
   community.general.make:
@@ -28,6 +28,7 @@
     chdir: "{{ ansible_user_dir }}/Lab/neovim"
     target: install
   become: true
+  when: clone.changed
 
 - name: Config folder
   ansible.builtin.file:
