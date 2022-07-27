@@ -221,7 +221,7 @@ bindsym $mod+ctrl+f exec "setxkbmap fr"
 
 bindsym $mod+p exec "sh ~/.config/scripts/toggle-picom.sh"
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
 for_window [class="Alacritty"] move container to workspace $ws1, focus
 assign [class="Brave-browser"] $ws2
