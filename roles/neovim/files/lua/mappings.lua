@@ -25,7 +25,7 @@ nmap("<leader>b", "<cmd>Telescope buffers<CR>")
 nmap("<leader>g", "<cmd>Telescope live_grep<CR>")
 
 	-- LspSaga
-nmap("ga", "<cmd>Telescope lsp_code_actions<CR>")
+nmap("ga", "<cmd>Lspsaga code_action<CR>")
 nmap("gd", "<cmd>Telescope lsp_definitions<CR>")
 nmap("gi", "<cmd>Telescope lsp_implementations<CR>")
 nmap("gh", "<cmd>Lspsaga hover_doc<CR>")
