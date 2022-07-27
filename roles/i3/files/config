@@ -236,8 +236,8 @@ for_window [class="discord"] move container to workspace $ws9
 for_window [class="Spotify"] move container to workspace $ws0
 assign [instance="blueman-manager"] $ws0
 
-gaps inner 3
-gaps outer 5
+gaps inner 4
+gaps outer 8
 smart_gaps on
 
 exec nitrogen --restore
