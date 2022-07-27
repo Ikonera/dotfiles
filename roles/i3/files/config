@@ -211,17 +211,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+a exec rofi -show window -show-icons
+bindsym $mod+a exec rofi -show window
 bindsym $mod+x exec flameshot gui
 
-bindsym $mod+n exec nnn "~/Nextcloud"
+bindsym $mod+n exec "alacritty -e nnn ~/Nextcloud"
 
 bindsym $mod+ctrl+u exec "setxkbmap us"
 bindsym $mod+ctrl+f exec "setxkbmap fr"
 
 bindsym $mod+p exec "sh ~/.config/scripts/toggle-picom.sh"
 
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 0
 
 for_window [class="Alacritty"] move container to workspace $ws1, focus
 assign [class="Brave-browser"] $ws2
@@ -236,8 +236,9 @@ for_window [class="discord"] move container to workspace $ws9
 for_window [class="Spotify"] move container to workspace $ws0
 assign [instance="blueman-manager"] $ws0
 
-# gaps inner 10
-# gaps outer 10
+gaps inner 3
+gaps outer 5
+smart_gaps on
 
 exec nitrogen --restore
 exec_always --no-startup-id "killall polybar -q; sh ~/.config/polybar/launch.sh --forest &>/dev/null"
@@ -246,7 +247,6 @@ exec alacritty
 exec keepassxc
 exec brave
 exec --no-startup-id nextcloud
-exec notion-app
 
 exec picom -b
 
