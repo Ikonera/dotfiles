@@ -12,6 +12,7 @@ lspinstall.setup {
 		"ansiblels",
 		"dockerls",
 		"yamlls",
+		"html",
 	},
 	automatic_installation = true,
 	ui = {
