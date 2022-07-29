@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
 	  'williamboman/nvim-lsp-installer'
   }
 
-  use {'tami5/lspsaga.nvim', branch = "nvim6.0"}
+  use {'kkharji/lspsaga.nvim', branch = "nvim6.0"}
 
   use 'folke/lsp-colors.nvim'
   require"lsp-colors".setup({
