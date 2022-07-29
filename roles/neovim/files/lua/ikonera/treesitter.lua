@@ -1,9 +1,14 @@
 
 -- Treesitter configuration
 
-require("nvim-ts-autotag").setup()
+require"nvim-ts-autotag".setup()
 
-require"nvim-treesitter.configs".setup {
+require"nvim-treesitter.configs".setup({
+	ensure_installed = {
+		"bash", "lua",
+		"javascript", "json", "jsdoc", "typescript", "tsx", "prisma", "html", "css", "yaml",
+		"rust", "dockerfile",
+	},
 	autopairs = {
 		enable = true,
 	},
@@ -19,5 +24,5 @@ require"nvim-treesitter.configs".setup {
 			"#E06C75"
 		},
 	}
-}
+})
 
