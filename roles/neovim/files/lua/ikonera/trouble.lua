@@ -9,10 +9,10 @@ require"trouble".setup({
 		information = "",
 		other = "",
 	},
-	use_diagnostic_signs = false,
+	use_diagnostic_signs = true,
 	position = "bottom",
 	icons = true,
-	height = 4,
+	height = 14,
 	mode = "workspace_diagnostics",
 	auto_open = true,
 })
