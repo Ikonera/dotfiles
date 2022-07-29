@@ -1,4 +1,27 @@
 ---
+notARepository: "skip"
+os:
+  editCommand: "nvim"
+git:
+  paging:
+    colorArg: never
+    pager: ydiff -p cat -s --wrap --width={{columnWidth}}
+gui:
+  sidePanelWidth: 0.2
+  theme:
+    selectedLineBgColor:
+      - "#565f89"
+  showCommandLog: false
+  showIcons: true
+  branchColors:
+    "master": "#f7768e"
+    "develop": "#7aa2f7"
+    "dev": "#7aa2f7"
+    "fix": "#ff9e64"
+  authorColors:
+    "Gabriel MILLET": "#9ece6a"
+    "Guillaume LEMAIRE": "#f7768e"
+
 customCommands:
   - key: 'c'
     context: "files"
@@ -12,3 +35,4 @@ customCommands:
     command: git commit -m "{{index .PromptResponses 0}}" -m "{{index .PromptResponses 1}}"
     loadingText: "Creating commit message"
     description: "Create commit with a description"
+...
