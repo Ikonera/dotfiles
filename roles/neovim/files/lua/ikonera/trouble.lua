@@ -1,7 +1,7 @@
 
 -- Trouble configuration
 
-require"trouble".setup {
+require"trouble".setup({
 	signs = {
 		error = "",
 		warning = "",
@@ -14,5 +14,6 @@ require"trouble".setup {
 	icons = true,
 	height = 4,
 	mode = "workspace_diagnostics",
-}
+	auto_open = true,
+})
 
