@@ -14,6 +14,6 @@ require"trouble".setup({
 	icons = true,
 	height = 14,
 	mode = "workspace_diagnostics",
-	auto_open = true,
+	auto_open = false,
 })
 
