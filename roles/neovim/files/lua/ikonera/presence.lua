@@ -1,3 +1,3 @@
-require("presence"):setup {
-	buttons: false
-}
+require("presence").setup({
+	buttons = false
+})
