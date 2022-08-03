@@ -16,7 +16,7 @@ opt.rnu = true
 opt.nu = true
 opt.softtabstop = 4
 opt.list = true
-opt.listchars = {tab = '| ', trail = '·'}
+opt.listchars = {tab = '│ ', trail = '·'}
 opt.cursorline = true
 opt.swapfile = false
 
@@ -39,9 +39,10 @@ g.tokyonight_italic_variables = true
 g.tokyonight_italic_keywords = true
 g.tokyonight_terminal_colors = true
 g.tokyonight_dark_float = false
-g.tokyonight_colors = {
-	bg_float = "none"
-}
+g.tokyonight_lualine_bold = true
+-- g.tokyonight_colors = {
+-- 	bg_float = "none"
+-- }
 g.syntax_on = true
 
 -- Vim commands that don't work with Lua
