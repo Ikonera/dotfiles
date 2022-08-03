@@ -23,6 +23,7 @@ nmap("<SPACE>", "<Nop>")
 nmap("<leader>f", "<cmd>Telescope find_files hidden=true<CR>")
 nmap("<leader>b", "<cmd>Telescope buffers<CR>")
 nmap("<leader>g", "<cmd>Telescope live_grep<CR>")
+nmap("<leader>p", "<cmd>Telescope project<CR>")
 
 	-- LspSaga
 nmap("ga", "<cmd>Lspsaga code_action<CR>")
