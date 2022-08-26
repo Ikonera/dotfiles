@@ -13,6 +13,7 @@ lspinstall.setup {
 		"dockerls",
 		"yamlls",
 		"html",
+		"eslint",
 	},
 	automatic_installation = true,
 	ui = {
