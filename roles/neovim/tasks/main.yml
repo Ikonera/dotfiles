@@ -4,13 +4,13 @@
     path: "{{ ansible_user_dir }}/Lab/neovim"
   register: install
 
-- name: Clone stable version from github
+- name: Clone nightly version from github
   ansible.builtin.git:
     depth: 1
     repo: "https://github.com/neovim/neovim.git"
     dest: "{{ ansible_user_dir }}/Lab/neovim"
     single_branch: yes
-    version: "stable"
+    version: "nightly"
     clone: yes
     update: yes
     force: yes
