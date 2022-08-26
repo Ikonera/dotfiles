@@ -12,7 +12,7 @@ require"lspsaga".setup({
 	code_action_prompt = {
 		enable = true,
 		sign = true,
-		sign_priority = 40,
+		sign_priority = 10,
 		virtual_text = true,
 	},
 })

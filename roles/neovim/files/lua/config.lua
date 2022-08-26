@@ -16,7 +16,6 @@ opt.rnu = true
 opt.nu = true
 opt.softtabstop = 4
 opt.list = true
-opt.listchars = {tab = '│ ', trail = '·'}
 opt.cursorline = true
 opt.swapfile = false
 
@@ -31,7 +30,7 @@ g.nvim_markdown_preview_format = "markdown"
 vim.o.termguicolors = true
 
   -- Tokyonight
-g.tokyonight_style = "night"
+g.tokyonight_style = "storm"
 g.tokyonight_transparent = true
 g.tokyonight_italic_comments = true
 g.tokyonight_italic_functions = false

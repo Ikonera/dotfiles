@@ -25,11 +25,9 @@ return require('packer').startup(function(use)
   use {'windwp/nvim-autopairs'}
   use 'terrortylor/nvim-comment'
 
-  -- Emmet
-  use 'mattn/emmet-vim'
-
   -- Prettier
   use 'MunifTanjim/prettier.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
 
   -- Nnn opener
   use 'luukvbaal/nnn.nvim'
@@ -37,13 +35,6 @@ return require('packer').startup(function(use)
   -- Git
   use 'airblade/vim-gitgutter'
   use 'kdheepak/lazygit.nvim'
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
-    tag = 'release' -- To use the latest release
-  }
 
   -- LSP
   use {
@@ -89,7 +80,6 @@ return require('packer').startup(function(use)
   use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
   use 'arkav/lualine-lsp-progress'
   use 'folke/lua-dev.nvim'
-  use 'andweeb/presence.nvim'
   use 'davidgranstrom/nvim-markdown-preview'
   use 'rcarriga/nvim-notify'
   use 'norcalli/nvim-colorizer.lua'
