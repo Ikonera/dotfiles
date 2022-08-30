@@ -5,6 +5,11 @@
     state: latest
   become: true
 
+- name: Copy setup file
+  ansible.builtin.copy:
+    src: ".zshrc"
+    dest: "{{ ansible_user_dir/.zshrc }}"
+
 - name: Change default user shell prompt
   ansible.builtin.user:
     name: "{{ ansible_env['USER'] }}"
