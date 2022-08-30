@@ -15,7 +15,6 @@ opt.shiftwidth = 4
 opt.rnu = true
 opt.nu = true
 opt.softtabstop = 4
-opt.list = true
 opt.cursorline = true
 opt.swapfile = false
 
