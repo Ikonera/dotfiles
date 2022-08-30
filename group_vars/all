@@ -2,7 +2,6 @@ default_roles:
   - git
   - curl
   - zsh
-  - omz
   - picom
   - bottom
   - duf
