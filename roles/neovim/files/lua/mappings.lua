@@ -19,6 +19,9 @@ vim.g.mapleader = ' '
 
 nmap("<SPACE>", "<Nop>")
 
+-- Don't yank with `x`
+nmap("x", '"_x')
+
 	-- Telescope
 nmap("<leader>f", "<cmd>Telescope find_files hidden=true<CR>")
 nmap("<leader>b", "<cmd>Telescope buffers<CR>")
