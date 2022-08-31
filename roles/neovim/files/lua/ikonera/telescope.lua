@@ -5,8 +5,8 @@ local telescope = require'telescope'
 
 telescope.setup({
 	defaults = {
-		prompt_prefix = "Files: ",
-		selection_caret = "   ",
+		prompt_prefix = "  ",
+		selection_caret = " ",
 		file_ignore_patterns = {
 			"node_modules/",
 			"dist/",
