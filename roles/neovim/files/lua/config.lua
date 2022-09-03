@@ -17,7 +17,6 @@ opt.nu = true
 opt.softtabstop = 4
 opt.cursorline = true
 opt.swapfile = false
-
 opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- Markdown preview
@@ -49,9 +48,9 @@ g.tokyonight_italic_keywords = true
 g.tokyonight_terminal_colors = true
 g.tokyonight_dark_float = false
 g.tokyonight_lualine_bold = true
--- g.tokyonight_colors = {
--- 	bg_float = "none"
--- }
+g.tokyonight_colors = {
+	bg_float = "none"
+}
 g.syntax_on = true
 
 -- Vim commands that don't work with Lua
