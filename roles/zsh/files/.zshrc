@@ -44,6 +44,7 @@ SPACESHIP_PROMPT_ORDER=(
 	terraform
 	package
 	line_sep
+	jobs
 	git
 	char
 )
