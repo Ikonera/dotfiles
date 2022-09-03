@@ -16,36 +16,13 @@ local function nmap(shortcut, command)
 end
 
 vim.g.mapleader = ' '
-
-nmap("<SPACE>", "<Nop>")
+nmap("<Space>", "<Nop>")
 
 -- Don't yank with `x`
 nmap("x", '"_x')
 
-	-- Telescope
-nmap("<leader>f", "<cmd>Telescope find_files hidden=true<CR>")
-nmap("<leader>b", "<cmd>Telescope buffers<CR>")
-nmap("<leader>g", "<cmd>Telescope live_grep<CR>")
-nmap("<leader>p", "<cmd>Telescope project<CR>")
-
-	-- LspSaga
-nmap("ga", "<cmd>Lspsaga code_action<CR>")
-nmap("gd", "<cmd>Telescope lsp_definitions<CR>")
-nmap("gi", "<cmd>Telescope lsp_implementations<CR>")
-nmap("gh", "<cmd>Lspsaga hover_doc<CR>")
-nmap("gl", "<cmd>Lspsaga show_line_diagnostics<CR>")
-nmap("gr", "<cmd>Telescope lsp_references<CR>")
-nmap("<leader>e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
-nmap("<leader>r", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
-
 	-- MarkdownPreview
 nmap("<leader>md", "<cmd>MarkdownPreview<CR>")
-
-	-- Git
-nmap("<leader>lg", "<cmd>LazyGit<CR>")
-
-	-- Nnn
-nmap("<leader>nn", "<cmd>NnnPicker %:p:h<CR>")
 
 	-- Nvim generics
 nmap("<S-h>", "<C-w>h")

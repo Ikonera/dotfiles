@@ -24,6 +24,17 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 g.nvim_markdown_preview_theme = "github"
 g.nvim_markdown_preview_format = "markdown"
 
+-- Vim LSP diagnostics
+vim.diagnostic.config({
+    signs = true,
+    update_in_insert = false,
+    underline = true,
+    severity_sort = true,
+    virtual_text = {
+		prefix = ""
+	},
+})
+
 -- Colorschemes config
 
 vim.o.termguicolors = true

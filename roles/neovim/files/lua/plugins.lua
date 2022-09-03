@@ -4,16 +4,18 @@ if fn.empty(fn.glob(install_path)) > 0 then
   Packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
   -- Packer itself
   use 'wbthomason/packer.nvim'
 
   -- Dashboard
   use 'glepnir/dashboard-nvim'
 
+  -- floaterm
+  use 'voldikss/vim-floaterm'
+
   -- Colorschemes
   use 'folke/tokyonight.nvim'
-  use "EdenEast/nightfox.nvim"
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -29,12 +31,8 @@ return require('packer').startup(function(use)
   use 'MunifTanjim/prettier.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
 
-  -- Nnn opener
-  use 'luukvbaal/nnn.nvim'
-
   -- Git
   use 'airblade/vim-gitgutter'
-  use 'kdheepak/lazygit.nvim'
 
   -- LSP
   use {
@@ -42,7 +40,9 @@ return require('packer').startup(function(use)
 	  'williamboman/nvim-lsp-installer'
   }
 
-  use {'kkharji/lspsaga.nvim', branch = "nvim6.0"}
+  use {'glepnir/lspsaga.nvim', branch = "main"}
+
+  use 'pantharshit00/vim-prisma'
 
   use 'folke/lsp-colors.nvim'
   require"lsp-colors".setup({
@@ -99,5 +99,11 @@ return require('packer').startup(function(use)
 
   vim.cmd [[ autocmd BufWritePost .tmux.conf execute ':!tmux source-file %' ]]
 
-end)
-
+end,
+config = {
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'single' })
+    end
+  }
+}})

@@ -3,13 +3,13 @@
 
 require"trouble".setup({
 	signs = {
-		error = "",
-		warning = "",
-		hint = "",
-		information = "",
-		other = "",
+		error = "",
+		warning = "",
+		hint = "",
+		information = "",
+		other = "",
 	},
-	use_diagnostic_signs = true,
+	use_diagnostic_signs = false,
 	position = "bottom",
 	icons = true,
 	height = 14,
