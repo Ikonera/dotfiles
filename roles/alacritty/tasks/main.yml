@@ -4,13 +4,6 @@
     path: "{{ ansible_user_dir }}/.config/alacritty"
   register: install
 
-- name: Install deps
-  ansible.builtin.package:
-    name: rust
-    state: latest
-  become: true
-  when: not install.stat.exists
-
 - name: Install
   ansible.builtin.package:
     name: "alacritty"
