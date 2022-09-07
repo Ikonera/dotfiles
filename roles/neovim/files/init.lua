@@ -1,5 +1,6 @@
 require("plugins")
 require("config")
+require("ikonera.tokyonight")
 require("ikonera.lsp")
 require("ikonera.lspsaga")
 require("ikonera.lualine")

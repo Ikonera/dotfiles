@@ -34,28 +34,3 @@ vim.diagnostic.config({
 	},
 })
 
--- Colorschemes config
-
-vim.o.termguicolors = true
-
-  -- Tokyonight
-g.tokyonight_style = "storm"
-g.tokyonight_transparent = true
-g.tokyonight_italic_comments = true
-g.tokyonight_italic_functions = false
-g.tokyonight_italic_variables = true
-g.tokyonight_italic_keywords = true
-g.tokyonight_terminal_colors = true
-g.tokyonight_dark_float = false
-g.tokyonight_lualine_bold = true
-g.tokyonight_colors = {
-	bg_float = "none"
-}
-g.syntax_on = true
-
--- Vim commands that don't work with Lua
-cmd([[
-  colorscheme tokyonight
-  filetype plugin indent on
-]])
-
