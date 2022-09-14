@@ -2,7 +2,7 @@
 -- Completion configuration
 
 local cmp = require'cmp'
-
+local lspkind = require'lspkind'
 
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -13,40 +13,13 @@ local feedkey = function(key, mode)
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
-local cmp_kinds = {
-  Text = '  ',
-  Method = '  ',
-  Function = '  ',
-  Constructor = '  ',
-  Field = '  ',
-  Variable = '  ',
-  Class = '  ',
-  Interface = '  ',
-  Module = '  ',
-  Property = '  ',
-  Unit = '  ',
-  Value = '  ',
-  Enum = '  ',
-  Keyword = '  ',
-  Snippet = '  ',
-  Color = '  ',
-  File = '  ',
-  Reference = '  ',
-  Folder = '  ',
-  EnumMember = '  ',
-  Constant = '  ',
-  Struct = '  ',
-  Event = '  ',
-  Operator = '  ',
-  TypeParameter = '  ',
-}
-
 cmp.setup({
-	view = {
-		entries = "custom" -- "native" "custom" "wildmenu"
-	},
-	experimental = {
-		ghost_text = true
+	window = {
+		completion = {
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+			col_offset = -3,
+			side_padding = 0
+		}
 	},
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
@@ -59,9 +32,11 @@ cmp.setup({
     },
 	formatting = {
 		fields = { "kind", "abbr" },
-		format = function(_, vim_item)
-		  vim_item.kind = cmp_kinds[vim_item.kind] or ""
-		  return vim_item
+		format = function (entry, vim_item)
+			local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+			local strings = vim.split(kind.kind, "%s", { trimempty = true })
+			kind.kind = " " .. strings[1] .. " "
+			return kind
 		end,
 	},
 	mapping = {

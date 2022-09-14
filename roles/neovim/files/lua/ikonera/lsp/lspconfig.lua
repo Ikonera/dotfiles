@@ -13,6 +13,7 @@ lspinstall.setup {
 		"ansiblels",
 		"dockerls",
 		"yamlls",
+		"cssls",
 		"html",
 		"eslint",
 	},

@@ -39,6 +39,7 @@ return require('packer').startup({function(use)
 	  'neovim/nvim-lspconfig',
 	  'williamboman/nvim-lsp-installer'
   }
+  use 'onsails/lspkind.nvim'
 
   use {'glepnir/lspsaga.nvim', branch = "main"}
 

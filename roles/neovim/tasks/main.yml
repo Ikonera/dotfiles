@@ -13,7 +13,6 @@
     version: "nightly"
     clone: yes
     update: yes
-    force: yes
   register: clone
 
 - name: Install deps

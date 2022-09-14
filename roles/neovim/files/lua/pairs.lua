@@ -1,4 +1,4 @@
 
 -- Autopairs config
 
-require"nvim-autopairs".setup {}
+require"nvim-autopairs".setup({})

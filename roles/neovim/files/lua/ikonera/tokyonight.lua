@@ -11,7 +11,7 @@ require"tokyonight".setup({
 		functions = "NONE",
 		variables = "NONE",
 		sidebars = "transparent",
-		floats = "transparent"
+		floats = "normal"
 	},
 	sidebars = { "vista_kind" },
 	lualine_bold = true,
