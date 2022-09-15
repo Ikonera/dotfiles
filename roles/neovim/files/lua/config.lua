@@ -25,9 +25,9 @@ g.nvim_markdown_preview_format = "markdown"
 
 -- Vim LSP diagnostics
 vim.diagnostic.config({
-    signs = true,
+    signs = false,
     update_in_insert = false,
-    underline = true,
+	underline = true,
     severity_sort = true,
     virtual_text = {
 		prefix = ""

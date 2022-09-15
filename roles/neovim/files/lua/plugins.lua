@@ -33,6 +33,7 @@ return require('packer').startup({function(use)
 
   -- Git
   use 'airblade/vim-gitgutter'
+  use 'lewis6991/gitsigns.nvim'
 
   -- LSP
   use {

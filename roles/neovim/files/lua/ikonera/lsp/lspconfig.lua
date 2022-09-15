@@ -16,6 +16,7 @@ lspinstall.setup {
 		"cssls",
 		"html",
 		"eslint",
+		"tailwindcss",
 	},
 	automatic_installation = true,
 	ui = {
@@ -47,6 +48,14 @@ for _, server in ipairs(lspinstall.get_installed_servers()) do
 					},
 				}
 			},
+		})
+	elseif server.name == "html" then
+		lspconfig[server.name].setup({
+			filetypes = { "html", "typescriptreact", "typescript.tsx", "javascriptreact", "javascript.jsx" }
+		})
+	elseif server.name == "eslint" then
+		lspconfig[server.name].setup({
+			filetypes = { "html" }
 		})
 	else
 		lspconfig[server.name].setup({})
