@@ -20,6 +20,7 @@
     chdir: "{{ ansible_user_dir }}/Lab/neovim"
     params:
       CMAKE_BUILD_TYPE: RelWithDebInfo
+    become: true
   when: clone.changed
 
 - name: Install neovim
