@@ -20,15 +20,13 @@
     chdir: "{{ ansible_user_dir }}/Lab/neovim"
     params:
       CMAKE_BUILD_TYPE: RelWithDebInfo
-    become: true
-  when: clone.changed
+  become: true
 
 - name: Install neovim
   community.general.make:
     chdir: "{{ ansible_user_dir }}/Lab/neovim"
     target: install
   become: true
-  when: clone.changed
 
 - name: Config folder
   ansible.builtin.file:
