@@ -243,7 +243,7 @@ smart_gaps on
 exec nitrogen --restore
 exec_always --no-startup-id clipcatd
 exec_always --no-startup-id "killall polybar -q; sh ~/.config/polybar/launch.sh --forest &>/dev/null"
-exec xset r rate 300
+exec xset r rate 250
 exec setxkbmap us
 exec alacritty
 exec keepassxc
