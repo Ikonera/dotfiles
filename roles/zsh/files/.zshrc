@@ -4,14 +4,14 @@ HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/ikonera/.zshrc'
+zstyle :compinstall filename "${HOME}/.zshrc"
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-ZSH_PLUGS="$HOME/.zsh/plugins"
-ZSH_THEMES="$HOME/.zsh/themes"
+ZSH_PLUGS="{$HOME}/.zsh/plugins"
+ZSH_THEMES="{$HOME}/.zsh/themes"
 
 # -------------------------------- #
 #        THEMES & PLUGINS          #
