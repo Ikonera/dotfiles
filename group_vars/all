@@ -1,19 +1,15 @@
 default_roles:
   - git
-  - curl
   - zsh
   - picom
   - bottom
+  - lazygit
   - duf
-  - alacritty
   - discord
-  - nodejs
   - neovim
   - nitrogen
   - i3
   - brave
-  - notion
-  - keepassxc
   - doppler
   - flameshot
   - tmux
