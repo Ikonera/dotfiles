@@ -10,8 +10,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-ZSH_PLUGS="{$HOME}/.zsh/plugins"
-ZSH_THEMES="{$HOME}/.zsh/themes"
+ZSH_PLUGS="${HOME}/.zsh/plugins"
+ZSH_THEMES="${HOME}/.zsh/themes"
 
 # -------------------------------- #
 #        THEMES & PLUGINS          #
