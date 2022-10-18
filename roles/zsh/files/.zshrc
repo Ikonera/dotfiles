@@ -74,6 +74,8 @@ SPACESHIP_DOCKER_SYMBOL=" "
 
 SPACESHIP_PACKAGE_SYMBOL=" "
 
+SPACESHIP_JOBS_SYMBOL=" טּ"
+
 # -------------------------------- #
 #           OTHER STUFF            #
 # -------------------------------- #
