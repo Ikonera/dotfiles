@@ -92,3 +92,6 @@ source ~/.zsh/envvars.zsh
 # Kubernetes / Helm
 source <(kubectl completion zsh)
 source <(helm completion zsh)
+
+# History
+eval "$(mcfly init zsh)"
