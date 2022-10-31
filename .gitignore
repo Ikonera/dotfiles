@@ -1,3 +1,4 @@
 
 .idea
 roles/tmux/files/.tmux/tmux-tokyo-night
+roles/neovim/files/plugin/packer_compiled.lua
