@@ -40,6 +40,7 @@ SPACESHIP_PROMPT_ORDER=(
 	php
 	rust
 	docker
+	# kubectl
 	aws
 	terraform
 	package
@@ -49,7 +50,7 @@ SPACESHIP_PROMPT_ORDER=(
 	char
 )
 
-SPACESHIP_CHAR_SYMBOL=""
+SPACESHIP_CHAR_SYMBOL=" "
 SPACESHIP_CHAR_SUFFIX=' '
 SPACESHIP_CHAR_COLOR_SUCCESS="#9ece6a"
 SPACESHIP_CHAR_COLOR_FAILURE="#f7768e"
@@ -72,6 +73,10 @@ SPACESHIP_NODE_SYMBOL=" "
 
 SPACESHIP_DOCKER_SYMBOL=" "
 
+SPACESHIP_KUBECTL_SHOW=true
+SPACESHIP_KUBECTL_ASYNC=false
+SPACESHIP_KUBECTL_VERSION_ASYNC=false
+
 SPACESHIP_PACKAGE_SYMBOL=" "
 
 SPACESHIP_JOBS_SYMBOL=" טּ"
@@ -80,5 +85,10 @@ SPACESHIP_JOBS_SYMBOL=" טּ"
 #           OTHER STUFF            #
 # -------------------------------- #
 
+# Private
 source ~/.zsh/aliases.zsh
 source ~/.zsh/envvars.zsh
+
+# Kubernetes / Helm
+source <(kubectl completion zsh)
+source <(helm completion zsh)
