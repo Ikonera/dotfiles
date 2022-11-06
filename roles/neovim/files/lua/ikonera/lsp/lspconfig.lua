@@ -53,6 +53,10 @@ for _, server in ipairs(lspinstall.get_installed_servers()) do
 		lspconfig[server.name].setup({
 			filetypes = { "html", "typescriptreact", "typescript.tsx", "javascriptreact", "javascript.jsx" }
 		})
+	elseif server.name == "yamlls" then
+		lspconfig[server.name].setup({
+			filetypes = { "yaml", "yml" }
+		})
 	elseif server.name == "eslint" then
 		lspconfig[server.name].setup({
 			filetypes = { "html" }
