@@ -22,7 +22,7 @@
 
 - name: Source cargo env
   ansible.builtin.shell:
-    cmd: "source {{ ansible_user_dir }}/.cargo/env"
+    cmd: "source $HOME/.cargo/env"
 
 - name: Delete installer
   ansible.builtin.file:
