@@ -30,12 +30,12 @@
 - name: Config folder
   ansible.builtin.file:
     mode: "0755"
-    path: "{{ conf_dir.path }}"
+    path: "{{ ansible_user_dir }}/.config/lazygit"
     state: "directory"
   when: conf_dir.stat.isdir is not defined
 
 - name: Copy config files
   ansible.builtin.copy:
     src: "config.yml"
-    dest: "{{ conf_dir.path }}"
+    dest: "{{ ansible_user_dir }}/.config/lazygit"
 ...
