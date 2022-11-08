@@ -18,7 +18,7 @@ default_roles:
   - nitrogen
   - lazygit
   - lazydocker
-  - rust
+  - rustup
   - alacritty
   - picom
   - neovim
