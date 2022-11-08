@@ -20,10 +20,6 @@
     cmd: "/tmp/rustup.sh -y"
   when: conf_dir.stat.isdir is not defined
 
-- name: Source cargo env
-  ansible.builtin.shell:
-    cmd: "source $HOME/.cargo/env"
-
 - name: Delete installer
   ansible.builtin.file:
     path: "/tmp/rustup.sh"
