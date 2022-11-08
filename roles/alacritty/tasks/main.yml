@@ -26,15 +26,16 @@
     force: yes
     repo: https://github.com/alacritty/alacritty.git
     version: "{{ alacritty.version }}"
+    update: yes
 
 - name: Build alacritty
   ansible.builtin.shell:
-    chdir: "{{ git.online.dir }}/alacritty"
+    chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/alacritty"
     cmd: "cargo build --release"
 
 - name: Move to binaries
   ansible.builtin.shell:
-    chdir: "{{ git.online.dir }}/alacritty"
+    chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/alacritty"
     cmd:
       - "rm /usr/bin/alacritty"
       - "cp target/release/alacritty /usr/bin/alacritty"
@@ -45,6 +46,7 @@
     mode: "0755"
     path: "{{ ansible_user_dir }}/.config/alacritty"
     state: "directory"
+  when: not install.stat.exists
 
 - name: Copy theme file
   ansible.builtin.copy:
