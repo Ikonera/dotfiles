@@ -12,7 +12,7 @@
 
 - name: Change default user shell prompt
   ansible.builtin.user:
-    name: "{{ ansible_env['USER'] }}"
+    name: "{{ ansible_env['USER'] || root }}"
     shell: "/usr/bin/zsh"
   become: true
 ...
