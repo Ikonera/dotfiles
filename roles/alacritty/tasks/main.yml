@@ -4,6 +4,11 @@
     path: "{{ ansible_user_dir }}/.config/alacritty"
   register: install
 
+- name: Verify previous version
+  ansible.builtin.stat:
+    path: "/usr/bin/alacritty"
+  register: previous
+
 - name: Install dependencies
   ansible.builtin.package:
     name:
@@ -33,12 +38,16 @@
     chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/alacritty"
     cmd: "cargo build --release"
 
+- name: If already exists, remove it
+  ansible.builtin.shell:
+    cmd: "rm /usr/bin/alacritty"
+  become: true
+  when: previous.stat.exists
+
 - name: Move to binaries
   ansible.builtin.shell:
     chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/alacritty"
-    cmd:
-      - "rm /usr/bin/alacritty"
-      - "cp target/release/alacritty /usr/bin/alacritty"
+    cmd: "cp target/release/alacritty /usr/bin/alacritty"
   become: true
 
 - name: Create config folder
