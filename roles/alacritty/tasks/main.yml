@@ -27,7 +27,7 @@
 - name: Clone alacritty from github
   ansible.builtin.git:
     depth: 1
-    dest: "{{ ansible_user_dir }}/{{ git.online.dir }}"
+    dest: "{{ ansible_user_dir }}/{{ git.online.dir }}/alacritty"
     force: yes
     repo: https://github.com/alacritty/alacritty.git
     version: "{{ alacritty.version }}"
