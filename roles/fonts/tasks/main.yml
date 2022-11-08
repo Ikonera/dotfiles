@@ -5,8 +5,8 @@
   register: fonts_dir
 
 - name: Copy JetBrains Nerd Fonts
-  ansible.builtin.file:
+  ansible.builtin.copy:
     src: "fonts"
-    dest: "/usr/local/share"
+    dest: "/usr/local/share/"
   become: true
   when: fonts_dir.stat.isdir is not defined
