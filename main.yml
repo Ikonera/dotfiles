@@ -1,6 +1,8 @@
 ---
-- name: Automate development workflow
+- name: Deploy all my dotfiles
   hosts: localhost
+  vars_files:
+    - ./values.yml
 
   tasks:
     - name: Set roles

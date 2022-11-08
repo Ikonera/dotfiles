@@ -1,18 +1,24 @@
 default_roles:
+  - fonts
   - git
   - zsh
-  - picom
-  - bottom
-  - lazygit
-  - duf
-  - discord
-  - neovim
-  - nitrogen
-  - i3
-  - brave
-  - doppler
   - flameshot
-  - tmux
+  - doppler
+  - dunst
+  - bottom
+  - duf
+  - k9s
+  - kubectl
+  - rofi
+  - i3
   - nextcloud
+  - discord
+  - brave
   - docker
-
+  - nitrogen
+  - lazygit
+  - lazydocker
+  - rust
+  - alacritty
+  - picom
+  - neovim

@@ -1,0 +1,41 @@
+---
+- name: Verify installation
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.config/lazydocker"
+  register: install
+
+- name: Install go
+  ansible.builtin.package:
+    name: go
+    state: latest
+  become: true
+  when: not install.exists
+
+- name: Clone lazydocker from github
+  ansible.builtin.git:
+    depth: 1
+    force: yes
+    single_branch: yes
+    dest: "{{ ansible_user_dir }}/{{ git.online.dir }}/lazydocker"
+    repo: https://github.com/jesseduffield/lazydocker.git
+    version: "{{ lazydocker.version }}"
+    update: yes
+    clone: yes
+
+- name: Install lazydocker
+  ansible.builtin.shell:
+    chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/lazydocker"
+    cmd: "go install"
+
+- name: Config folder
+  ansible.builtin.file:
+    mode: "0755"
+    path: "{{ register.path }}"
+    state: "directory"
+  when: not install.exists
+
+- name: Copy config files
+  ansible.builtin.copy:
+    src: "config.yml"
+    dest: "{{ register.path }}"
+...

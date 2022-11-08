@@ -1,0 +1,12 @@
+---
+- name: Verify already present fonts
+  ansible.builtin.stat:
+    path: "/usr/local/share/fonts"
+  register: fonts_dir
+
+- name: Copy JetBrains Nerd Fonts
+  ansible.builtin.file:
+    src: "fonts"
+    dest: "/usr/local/share"
+  become: true
+  when: not fonts_dir.exists

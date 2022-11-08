@@ -1,0 +1,18 @@
+---
+- name: Config folder
+  ansible.builtin.file:
+    mode: "0755"
+    dest: "{{ ansible_user_dir }}/.config/k9s"
+    state: "directory"
+
+- name: Copy config file
+  ansible.builtin.file:
+    mode: "0755"
+    src: "skin.yml"
+    dest: "{{ ansible_user_dir }}/.config/k9s/skin.yml"
+
+- name: Install k9s
+  ansible.buitin.package:
+    name: k9s
+    state: latest
+  become: true

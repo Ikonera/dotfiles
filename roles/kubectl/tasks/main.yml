@@ -1,0 +1,22 @@
+---
+- name: Verify installation
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.kube"
+  register: install
+
+- name: Download kubectl
+  ansible.builtin.get_url:
+    url: "https://dl.k8s.io/release/v{{ kubectl.version }}/bin/linux/amd64/kubectl"
+    dest: "/tmp/kubectl"
+  when: not install.stat.exists
+
+- name: Make it executable
+  ansible.builtin.shell:
+    cmd: "chmod +x /tmp/kubectl"
+  when: not install.stat.exists
+
+- name: Move to binaries
+  ansible.builtin.shell:
+    cmd: "mv /tmp/kubectl /usr/bin/kubectl"
+  become: true
+  when: not install.stat.exists

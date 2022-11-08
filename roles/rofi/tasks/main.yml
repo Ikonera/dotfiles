@@ -1,0 +1,25 @@
+---
+- name: Verify installation
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.config/rofi"
+  register: install
+
+- name: Config folder
+  ansible.builtin.file:
+    mode: "0755"
+    dest: "{{ ansible_user_dir }}/.config/rofi"
+    state: "directory"
+  when: not install.exists
+
+- name: Copy config file
+  ansible.builtin.file:
+    mode: "0755"
+    src: "config.rasi"
+    dest: "{{ ansible_user_dir }}/.config/rofi/config.rasi"
+
+- name: Install rofi
+  ansible.builtin.package:
+    name: rofi
+    state: latest
+  become: true
+  when: not install.exists

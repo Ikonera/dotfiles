@@ -1,0 +1,18 @@
+---
+kubectl:
+  version: 1.23.0
+
+neovim:
+  version: nightly
+
+git:
+  online:
+    dir: "~/Lab/github.com/"
+  local:
+    dir: "~/Lab/"
+
+lazygit:
+  version: master
+
+lazydocker:
+  version: master

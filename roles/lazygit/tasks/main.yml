@@ -1,18 +1,41 @@
 ---
-- name: Install
+- name: Verify installation
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.config/lazygit"
+  register: install
+
+- name: Install go
   ansible.builtin.package:
-    name: lazygit
+    name: go
     state: latest
   become: true
+  when: not install.exists
+
+- name: Clone lazygit from github
+  ansible.builtin.git:
+    depth: 1
+    force: yes
+    dest: "{{ ansible_user_dir }}/{{ git.online.dir }}/lazygit"
+    repo: https://github.com/jesseduffield/lazygit.git
+    version: "{{ lazygit.version }}"
+    single_branch: yes
+    clone: yes
+    update: yes
+
+- name: Install lazygit
+  ansible.builtin.shell:
+    chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/lazygit"
+    cmd: "go install"
 
 - name: Config folder
   ansible.builtin.file:
     mode: "0755"
-    path: "{{ ansible_user_dir }}/.config/lazygit"
+    path: "{{ register.path }}"
     state: "directory"
+  when: not install.exists
 
 - name: Copy config files
   ansible.builtin.copy:
     src: "config.yml"
-    dest: "{{ ansible_user_dir }}/.config/lazygit"
+    dest: "{{ register.path }}"
 ...

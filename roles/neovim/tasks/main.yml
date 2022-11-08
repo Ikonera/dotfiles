@@ -1,30 +1,30 @@
 ---
 - name: Verify installation
   ansible.builtin.stat:
-    path: "{{ ansible_user_dir }}/Lab/github.com/neovim"
+    path: "{{ ansible_user_dir }}/{{ git.online.dir }}/neovim"
   register: install
 
 - name: Clone nightly version from github
   ansible.builtin.git:
     depth: 1
     repo: "https://github.com/neovim/neovim.git"
-    dest: "{{ ansible_user_dir }}/Lab/github.com/neovim"
+    dest: "{{ ansible_user_dir }}/{{ git.online.dir }}/neovim"
     single_branch: yes
-    version: "nightly"
+    version: "{{ neovim.version }}"
     clone: yes
     update: yes
   register: clone
 
 - name: Install deps
   community.general.make:
-    chdir: "{{ ansible_user_dir }}/Lab/github.com/neovim"
+    chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/neovim"
     params:
       CMAKE_BUILD_TYPE: RelWithDebInfo
   become: true
 
 - name: Install neovim
   community.general.make:
-    chdir: "{{ ansible_user_dir }}/Lab/github.com/neovim"
+    chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/neovim"
     target: install
   become: true
 
