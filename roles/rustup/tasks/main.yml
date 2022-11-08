@@ -2,25 +2,26 @@
 - name: Verify installation
   ansible.builtin.stat:
     path: "{{ ansible_user_dir }}/.rustup"
-  register: install
+  register: conf_dir
 
 - name: Download rustup
   ansible.builtin.get_url:
     url: "https://sh.rustup.rs"
     dest: "/tmp/rustup.sh"
-  when: not install.exists
+  when: conf_dir.stat.isdir is not defined
 
 - name: Make it executable
   ansible.builtin.shell:
     cmd: "chmod +x /tmp/rustup.sh"
-  when: not install.exists
+  when: conf_dir.stat.isdir is not defined
 
 - name: Run it
   ansible.builtin.shell:
     cmd: "./tmp/rustup.sh"
-  when: not install.exists
+  when: conf_dir.stat.isdir is not defined
 
 - name: Delete installer
   ansible.builtin.file:
     path: "/tmp/rustup.sh"
     state: "absent"
+  when: conf_dir.stat.isdir is not defined
