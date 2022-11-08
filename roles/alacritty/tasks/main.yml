@@ -32,6 +32,7 @@
     repo: https://github.com/alacritty/alacritty.git
     version: "{{ alacritty.version }}"
     update: yes
+    clone: yes
 
 - name: Build alacritty
   ansible.builtin.shell:

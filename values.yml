@@ -7,6 +7,9 @@ kubectl:
 neovim:
   version: nightly
 
+alacritty:
+  version: master
+
 git:
   online:
     dir: "~/Lab/github.com/"
