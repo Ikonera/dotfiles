@@ -9,4 +9,4 @@
     src: "fonts"
     dest: "/usr/local/share"
   become: true
-  when: not fonts_dir.exists
+  when: fonts_dir.stat.isdir is not defined
