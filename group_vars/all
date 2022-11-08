@@ -13,7 +13,6 @@ default_roles:
   - i3
   - nextcloud
   - discord
-  - brave
   - docker
   - nitrogen
   - lazygit
@@ -22,3 +21,4 @@ default_roles:
   - alacritty
   - picom
   - neovim
+  - brave
