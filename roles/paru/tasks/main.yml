@@ -18,4 +18,8 @@
 - name: Build it
   ansible.builtin.shell:
     chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/paru"
-    cmd: "makepkg -si"
+    cmd:
+      - "cargo build --release"
+      - "rm /usr/bin/paru"
+      - "cp target/release/paru /usr/bin/paru"
+  become: true
