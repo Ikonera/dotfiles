@@ -4,6 +4,19 @@
     path: "{{ ansible_user_dir }}/{{ git.online.dir }}/neovim"
   register: install
 
+- name: Install deps
+  ansible.builtin.package:
+    name:
+      - base-devel
+      - cmake
+      - unzip
+      - ninja
+      - tree-sitter
+      - curl
+    state: latest
+  become: true
+  when: not install.stat.exists
+
 - name: Clone nightly version from github
   ansible.builtin.git:
     depth: 1
@@ -15,7 +28,7 @@
     update: yes
   register: clone
 
-- name: Install deps
+- name: Build it
   community.general.make:
     chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/neovim"
     params:
