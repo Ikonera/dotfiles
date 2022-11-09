@@ -1,0 +1,6 @@
+---
+- name: Install mcfly
+  ansible.builtin.package:
+    name: mcfly
+    state: latest
+  become: true

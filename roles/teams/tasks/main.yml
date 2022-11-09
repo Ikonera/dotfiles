@@ -1,0 +1,5 @@
+---
+- name: Install teams
+  kewlfft.aur.aur:
+    name: teams
+    state: latest

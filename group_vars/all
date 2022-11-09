@@ -1,16 +1,22 @@
 default_roles:
   - fonts
   - git
+  - curl
   - zsh
   - flameshot
   - doppler
   - dunst
   - bottom
   - duf
+  - ydiff
+  - ripgrep
+  - keepassxc
   - k9s
   - kubectl
+  - nodejs
   - rofi
   - i3
+  - picom
   - nextcloud
   - discord
   - docker
@@ -19,6 +25,9 @@ default_roles:
   - lazydocker
   - rustup
   - alacritty
+  - tmux
   - picom
+  - paru
   - neovim
   - brave
+  - teams

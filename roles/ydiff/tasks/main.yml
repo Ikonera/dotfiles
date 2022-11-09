@@ -1,0 +1,5 @@
+---
+- name: Install ydiff
+  kewlfft.aur.aur:
+    name: ydiff
+    state: latest
