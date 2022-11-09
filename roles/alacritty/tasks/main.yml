@@ -38,7 +38,7 @@
   ansible.builtin.shell:
     chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/alacritty"
     cmd:
-      - "source $HOME/.cargo/env"
+      - "source /{{ linux_user | default(ansible_env['USER']) }}/.cargo/env"
       - "cargo build --release"
 
 - name: If already exists, remove it
