@@ -95,3 +95,8 @@ source <(helm completion zsh)
 
 # History
 eval "$(mcfly init zsh)"
+
+# Rustup / Cargo
+if ! [[ -x $(command -v cargo)]]; then
+	source ${HOME}/.cargo/env
+fi
