@@ -95,6 +95,7 @@ source <(helm completion zsh)
 
 # History
 eval "$(mcfly init zsh)"
+source /usr/share/doc/mcfly/mcfly.bash
 
 # Rustup / Cargo
 if ! [[ -x $(command -v cargo)]]; then
