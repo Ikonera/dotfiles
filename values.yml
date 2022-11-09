@@ -12,9 +12,9 @@ alacritty:
 
 git:
   online:
-    dir: "$HOME/Lab/github.com/"
+    dir: "{{ ansible_user_dir }}/Lab/github.com/"
   local:
-    dir: "$HOME/Lab/"
+    dir: "{{ ansible_user_dir }}/Lab/"
 
 lazygit:
   version: master
