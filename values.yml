@@ -12,12 +12,15 @@ alacritty:
 
 git:
   online:
-    dir: "~/Lab/github.com/"
+    dir: "$HOME/Lab/github.com/"
   local:
-    dir: "~/Lab/"
+    dir: "$HOME/Lab/"
 
 lazygit:
   version: master
 
 lazydocker:
+  version: master
+
+paru:
   version: master
