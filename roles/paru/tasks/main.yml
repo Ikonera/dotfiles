@@ -18,8 +18,17 @@
 - name: Build it
   ansible.builtin.shell:
     chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/paru"
-    cmd:
-      - "cargo build --release"
-      - "rm /usr/bin/paru"
-      - "cp target/release/paru /usr/bin/paru"
+    cmd: "source $HOME/.cargo/env; cargo build --release"
+
+- name: Delete previous version
+  ansible.builtin.file:
+    path: "/usr/bin/paru"
+    state: "absent"
+  become: true
+  when: install.stat.exists
+
+- name: Move to binaries
+  ansible.builtin.shell:
+    chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/paru"
+    cmd: "cp target/release/paru /usr/bin/paru"
   become: true
