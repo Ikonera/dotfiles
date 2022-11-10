@@ -33,8 +33,8 @@ masonLsp.setup({
 })
 
 for _, server in ipairs(masonLsp.get_installed_servers()) do
-	if server.name == "sumneko_lua" then
-		lspconfig[server.name].setup({
+	if server == "sumneko_lua" then
+		lspconfig[server].setup({
 			settings = {
 				Lua = {
 					runtime = {
@@ -53,19 +53,19 @@ for _, server in ipairs(masonLsp.get_installed_servers()) do
 				}
 			},
 		})
-	elseif server.name == "html" then
-		lspconfig[server.name].setup({
+	elseif server == "html" then
+		lspconfig[server].setup({
 			filetypes = { "html", "typescriptreact", "typescript.tsx", "javascriptreact", "javascript.jsx" }
 		})
-	elseif server.name == "yamlls" then
-		lspconfig[server.name].setup({
+	elseif server == "yamlls" then
+		lspconfig[server].setup({
 			filetypes = { "yaml", "yml" }
 		})
-	elseif server.name == "eslint" then
-		lspconfig[server.name].setup({
+	elseif server == "eslint" then
+		lspconfig[server].setup({
 			filetypes = { "html" }
 		})
 	else
-		lspconfig[server.name].setup({})
+		lspconfig[server].setup({})
 	end
 end
