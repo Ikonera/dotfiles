@@ -97,7 +97,3 @@ source <(helm completion zsh)
 eval "$(mcfly init zsh)"
 source /usr/share/doc/mcfly/mcfly.bash
 
-# Rustup / Cargo
-if ! [[ -x $(command -v cargo)]]; then
-	source ${HOME}/.cargo/env
-fi
