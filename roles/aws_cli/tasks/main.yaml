@@ -1,0 +1,6 @@
+---
+- name: Install aws CLI
+  ansible.builtin.package:
+    name: aws-cli
+    state: latest
+  become: true

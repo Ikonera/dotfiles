@@ -1,6 +1,7 @@
 default_roles:
   - fonts
   - git
+  - github_cli
   - curl
   - zsh
   - flameshot
@@ -10,10 +11,12 @@ default_roles:
   - duf
   - ydiff
   - ripgrep
+  - bat
   - keepassxc
   - k9s
   - kubectl
   - nodejs
+  - aws_cli
   - rofi
   - i3
   - picom
@@ -31,3 +34,4 @@ default_roles:
   - neovim
   - brave
   - teams
+  - insomnia
