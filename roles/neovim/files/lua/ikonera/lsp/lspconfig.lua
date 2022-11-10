@@ -1,12 +1,23 @@
 
 -- LSP Config
-local lspinstall = require"nvim-lsp-installer"
+local mason = require"mason"
+local masonLsp = require"mason-lspconfig"
 local lspconfig = require"lspconfig"
 local path = vim.split(package.path, ";")
 
-lspinstall.setup {
+mason.setup({
+	ui = {
+		icons = {
+			server_installed = "✓",
+			server_pending = "➜",
+			server_uninstalled = "✗",
+		}
+	}
+})
+
+masonLsp.setup({
 	ensure_installed = {
-		"rust_analyser",
+		"rust_analyzer",
 		"prismals",
 		"sumneko_lua",
 		"tsserver",
@@ -19,16 +30,9 @@ lspinstall.setup {
 		"tailwindcss",
 	},
 	automatic_installation = true,
-	ui = {
-		icons = {
-			server_installed = "✓",
-			server_pending = "➜",
-			server_uninstalled = "✗",
-		}
-	}
-}
+})
 
-for _, server in ipairs(lspinstall.get_installed_servers()) do
+for _, server in ipairs(masonLsp.get_installed_servers()) do
 	if server.name == "sumneko_lua" then
 		lspconfig[server.name].setup({
 			settings = {
