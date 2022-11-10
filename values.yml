@@ -24,3 +24,6 @@ lazydocker:
 
 paru:
   version: master
+
+tmux:
+  version: master

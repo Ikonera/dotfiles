@@ -1,8 +1,37 @@
 ---
-- name: Install
+- name: Verify previous installation
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.tmux"
+  register: install
+
+- name: Install deps
   ansible.builtin.package:
-    name: tmux
+    name:
+      - libevent
+      - ncurses
     state: latest
+  become: true
+  when: not install.stat.exists
+
+- name: Clone tmux from github
+  ansible.builtin.git:
+    depth: 1
+    clone: yes
+    force: yes
+    update: yes
+    repo: https://github.com/tmux/tmux.git
+    dest: "{{ ansible_user_dir }}/{{ git.online.dir }}/tmux"
+    version: "{{ tmux.version }}"
+
+- name: Run autogen and configure
+  ansible.builtin.shell:
+    chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/tmux"
+    cmd: "sh autogen.sh; ./configure"
+
+- name: Make it and install
+  ansible.builtin.shell:
+    chdir: "{{ ansible_user_dir }}/{{ git.online.dir }}/tmux"
+    cmd: "make && make install"
   become: true
 
 - name: Copy config file
