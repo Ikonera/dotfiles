@@ -28,6 +28,9 @@ masonLsp.setup({
 		"html",
 		"eslint",
 		"tailwindcss",
+		"emmet-ls",
+		"cfn-lint",
+		"bash-language-server",
 	},
 	automatic_installation = true,
 })
@@ -59,6 +62,13 @@ for _, server in ipairs(masonLsp.get_installed_servers()) do
 		})
 	elseif server == "yamlls" then
 		lspconfig[server].setup({
+			settings = {
+				yaml = {
+					schemas = {
+						kubernetes = "globPattern"
+					}
+				}
+			},
 			filetypes = { "yaml", "yml" }
 		})
 	elseif server == "eslint" then
