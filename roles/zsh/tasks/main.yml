@@ -8,7 +8,7 @@
 - name: Copy setup file
   ansible.builtin.copy:
     src: ".zshrc"
-    dest: "{{ ansible_user_dir }}"
+    dest: "{{ ansible_user_dir }}/.zshrc"
 
 - name: Change default user shell prompt
   ansible.builtin.user:
