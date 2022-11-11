@@ -1,0 +1,10 @@
+---
+- name: Install spaceship
+  ansible.builtin.git:
+    depth: 1
+    clone: yes
+    force: yes
+    update: yes
+    repo: https://github.com/spaceship-prompt/spaceship-prompt.git
+    dest: "{{ ansible_user_dir }}/.zsh/themes/spaceship"
+    version: "{{ spaceship.version }}"

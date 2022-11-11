@@ -27,3 +27,6 @@ paru:
 
 tmux:
   version: master
+
+spaceship:
+  version: master
