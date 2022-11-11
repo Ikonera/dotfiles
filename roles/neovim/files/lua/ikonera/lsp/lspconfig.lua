@@ -28,9 +28,8 @@ masonLsp.setup({
 		"html",
 		"eslint",
 		"tailwindcss",
-		"emmet-ls",
-		"cfn-lint",
-		"bash-language-server",
+		"emmet_ls",
+		"bashls",
 	},
 	automatic_installation = true,
 })
