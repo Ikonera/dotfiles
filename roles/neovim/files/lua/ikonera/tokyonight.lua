@@ -2,16 +2,16 @@
 -- Tokyonight scheme config
 
 require"tokyonight".setup({
-	style = "storm",
+	style = "night",
 	transparent = true,
 	terminal_colors = true,
 	styles = {
-		comments = "italic",
-		keywords = "italic",
-		functions = "NONE",
-		variables = "NONE",
+		comments = { italic = true },
+		keywords = { italic = true },
+		functions = {},
+		variables = {},
 		sidebars = "transparent",
-		floats = "normal"
+		floats = "dark"
 	},
 	sidebars = { "vista_kind" },
 	lualine_bold = true,
@@ -20,5 +20,5 @@ require"tokyonight".setup({
 vim.o.termguicolors = true
 
 vim.cmd([[
-	colorscheme tokyonight
+	colorscheme tokyonight-night
 ]])
