@@ -73,9 +73,17 @@ return require('packer').startup({function(use)
   }
 
   -- Telescope
-  use {'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  use { "nvim-telescope/telescope-file-browser.nvim" }
-  use { "nvim-telescope/telescope-project.nvim" }
+  use {
+	  'nvim-telescope/telescope.nvim',
+	  requires = {
+		  'nvim-lua/plenary.nvim',
+		  'nvim-telescope/telescope-github.nvim',
+		  "nvim-telescope/telescope-file-browser.nvim",
+		  "nvim-telescope/telescope-project.nvim",
+		  "nvim-telescope/telescope-media-files.nvim",
+		  "cljoly/telescope-repo.nvim",
+	  }
+  }
 
   -- Others...
   use 'kyazdani42/nvim-web-devicons'
