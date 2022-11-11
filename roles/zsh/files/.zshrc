@@ -17,15 +17,15 @@ ZSH_THEMES="${HOME}/.zsh/themes"
 #        THEMES & PLUGINS          #
 # -------------------------------- #
 
-source $ZSH_THEMES/spaceship-prompt/spaceship.zsh-theme
+source ${ZSH_THEMES}/spaceship/spaceship.zsh
 
-source $ZSH_PLUGS/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH_PLUGS/zsh-completions/zsh-completions.plugin.zsh
-source $ZSH_PLUGS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source $ZSH_PLUGS/git.zsh
-source $ZSH_PLUGS/tmux.zsh
-source $ZSH_PLUGS/z.zsh
-source $ZSH_PLUGS/zsh-interactive-cd.zsh
+source ${ZSH_PLUGS}/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${ZSH_PLUGS}/zsh-completions/zsh-completions.plugin.zsh
+source ${ZSH_PLUGS}/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source ${ZSH_PLUGS}/git.zsh
+source ${ZSH_PLUGS}/tmux.zsh
+source ${ZSH_PLUGS}/z.zsh
+source ${ZSH_PLUGS}/zsh-interactive-cd.zsh
 
 # -------------------------------- #
 #          THEME CONFIG            #
@@ -40,7 +40,6 @@ SPACESHIP_PROMPT_ORDER=(
 	php
 	rust
 	docker
-	# kubectl
 	aws
 	terraform
 	package
@@ -56,6 +55,7 @@ SPACESHIP_CHAR_COLOR_SUCCESS="#2ac3de"
 SPACESHIP_CHAR_COLOR_FAILURE="#f7768e"
 
 SPACESHIP_DIR_PREFIX=" "
+SPACESHIP_DIR_SUFFIX="  "
 SPACESHIP_DIR_TRUNC=3
 SPACESHIP_DIR_COLOR="#73daca"
 
@@ -72,10 +72,6 @@ SPACESHIP_TIME_SHOW=false
 SPACESHIP_NODE_SYMBOL=" "
 
 SPACESHIP_DOCKER_SYMBOL=" "
-
-SPACESHIP_KUBECTL_SHOW=true
-SPACESHIP_KUBECTL_ASYNC=false
-SPACESHIP_KUBECTL_VERSION_ASYNC=false
 
 SPACESHIP_PACKAGE_SYMBOL=" "
 
