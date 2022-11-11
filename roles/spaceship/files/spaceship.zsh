@@ -1,0 +1,49 @@
+# -------------------------------- #
+#          THEME CONFIG            #
+# -------------------------------- #
+
+SPACESHIP_PROMPT_ORDER=(
+	user
+	host
+	dir
+	node
+	php
+	rust
+	docker
+	aws
+	terraform
+	package
+	line_sep
+	jobs
+	git
+	char
+)
+
+SPACESHIP_CHAR_SYMBOL=" "
+SPACESHIP_CHAR_SUFFIX=' '
+SPACESHIP_CHAR_COLOR_SUCCESS="#2ac3de"
+SPACESHIP_CHAR_COLOR_FAILURE="#f7768e"
+
+SPACESHIP_DIR_PREFIX=" "
+SPACESHIP_DIR_SUFFIX="  "
+SPACESHIP_DIR_TRUNC=3
+SPACESHIP_DIR_COLOR="#73daca"
+
+SPACESHIP_USER_SHOW=always
+SPACESHIP_USER_COLOR="#bb9af7"
+SPACESHIP_USER_SUFFIX=''
+
+SPACESHIP_HOST_SHOW=always
+SPACESHIP_HOST_PREFIX="@"
+SPACESHIP_HOST_SHOW_FULL=true
+
+SPACESHIP_TIME_SHOW=false
+
+SPACESHIP_NODE_SYMBOL=" "
+
+SPACESHIP_DOCKER_SYMBOL=" "
+
+SPACESHIP_PACKAGE_SYMBOL=" "
+
+SPACESHIP_JOBS_SYMBOL=" "
+
