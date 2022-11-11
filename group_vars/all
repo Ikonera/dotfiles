@@ -4,6 +4,7 @@ default_roles:
   - github_cli
   - curl
   - zsh
+  - spaceship
   - flameshot
   - doppler
   - dunst
