@@ -17,7 +17,7 @@ ZSH_THEMES="${HOME}/.zsh/themes"
 #        THEMES & PLUGINS          #
 # -------------------------------- #
 
-source ${ZSH_THEMES}/spaceship/spaceship.zsh
+source ${ZSH_THEMES}/spaceship/spaceship.zsh-theme
 
 source ${ZSH_PLUGS}/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ${ZSH_PLUGS}/zsh-completions/zsh-completions.plugin.zsh
