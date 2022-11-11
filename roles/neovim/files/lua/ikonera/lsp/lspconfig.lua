@@ -30,6 +30,8 @@ masonLsp.setup({
 		"tailwindcss",
 		"emmet_ls",
 		"bashls",
+		"terraformls",
+		"tflint",
 	},
 	automatic_installation = true,
 })
