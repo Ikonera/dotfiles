@@ -37,7 +37,7 @@ source ~/.zsh/aliases.zsh
 source ~/.zsh/envvars.zsh
 
 # Kubernetes / Helm
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 source <(helm completion zsh)
 
 # History
