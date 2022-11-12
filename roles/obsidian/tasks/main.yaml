@@ -1,0 +1,6 @@
+---
+- name: Install obsidian
+  ansible.builtin.package:
+    name: obsidian
+    state: latest
+  become: true
