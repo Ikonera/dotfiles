@@ -23,6 +23,10 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 g.nvim_markdown_preview_theme = "github"
 g.nvim_markdown_preview_format = "markdown"
 
+-- Highlight groups
+vim.api.nvim_set_hl(0, "Floaterm", { bg="#1a1b26" })
+vim.api.nvim_set_hl(0, "FloatermBorder", { bg="#1a1b26" })
+
 -- Vim LSP diagnostics
 vim.diagnostic.config({
     signs = false,
