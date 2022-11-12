@@ -32,7 +32,6 @@ return require('packer').startup({function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
 
   -- Git
-  use 'airblade/vim-gitgutter'
   use 'lewis6991/gitsigns.nvim'
 
   -- LSP
@@ -89,7 +88,7 @@ return require('packer').startup({function(use)
   use {'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
   use 'arkav/lualine-lsp-progress'
-  use 'folke/lua-dev.nvim'
+  use 'folke/neodev.nvim'
   use 'davidgranstrom/nvim-markdown-preview'
   use 'rcarriga/nvim-notify'
   use 'norcalli/nvim-colorizer.lua'
