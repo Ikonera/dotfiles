@@ -3,6 +3,7 @@
 local mason = require"mason"
 local masonLsp = require"mason-lspconfig"
 local lspconfig = require"lspconfig"
+local capabilities = require"cmp_nvim_lsp".default_capabilities()
 local path = vim.split(package.path, ";")
 
 mason.setup({
@@ -39,8 +40,12 @@ masonLsp.setup({
 for _, server in ipairs(masonLsp.get_installed_servers()) do
 	if server == "sumneko_lua" then
 		lspconfig[server].setup({
+			capabilities = capabilities,
 			settings = {
 				Lua = {
+					completion = {
+						callSnippet = "Replace",
+					},
 					runtime = {
 						version = "LuaJIT",
 						path = path
@@ -59,10 +64,12 @@ for _, server in ipairs(masonLsp.get_installed_servers()) do
 		})
 	elseif server == "html" then
 		lspconfig[server].setup({
+			capabilities = capabilities,
 			filetypes = { "html", "typescriptreact", "typescript.tsx", "javascriptreact", "javascript.jsx" }
 		})
 	elseif server == "yamlls" then
 		lspconfig[server].setup({
+			capabilities = capabilities,
 			settings = {
 				yaml = {
 					schemas = {
@@ -74,9 +81,12 @@ for _, server in ipairs(masonLsp.get_installed_servers()) do
 		})
 	elseif server == "eslint" then
 		lspconfig[server].setup({
+			capabilities = capabilities,
 			filetypes = { "html" }
 		})
 	else
-		lspconfig[server].setup({})
+		lspconfig[server].setup({
+			capabilities = capabilities,
+		})
 	end
 end
