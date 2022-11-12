@@ -55,8 +55,6 @@ return require('packer').startup({function(use)
 	Hint = "#10B981"
   })
 
-  use 'onsails/lspkind-nvim'
-
   -- Completion
   use {
 	  'hrsh7th/cmp-nvim-lsp',
