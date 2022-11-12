@@ -1,0 +1,12 @@
+---
+- name: Verify scripts folder
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.config/scripts"
+  register: scripts_folder
+
+- name: Copy picom script
+  ansible.builtin.copy:
+    mode: "0755"
+    src: "toggle-picom.sh"
+    dest: "{{ ansible_user_dir }}/.config/scripts/toggle-picom.sh"
+  when: not scripts_folder.stat.exists
