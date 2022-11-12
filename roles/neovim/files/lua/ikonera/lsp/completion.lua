@@ -14,11 +14,18 @@ local feedkey = function(key, mode)
 end
 
 cmp.setup({
+	view = {
+		entries = "custom"
+	},
 	window = {
 		completion = {
 			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
 			col_offset = -3,
-			side_padding = 0
+			side_padding = 0,
+			border = "rounded",
+		},
+		documentation = {
+			border = "rounded",
 		}
 	},
 	snippet = {
@@ -32,12 +39,17 @@ cmp.setup({
     },
 	formatting = {
 		fields = { "kind", "abbr" },
-		format = function (entry, vim_item)
-			local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-			local strings = vim.split(kind.kind, "%s", { trimempty = true })
-			kind.kind = " " .. strings[1] .. " "
-			return kind
-		end,
+		format = function(entry, vim_item)
+		  if vim.tbl_contains({ 'path' }, entry.source.name) then
+			local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
+			if icon then
+			  vim_item.kind = icon
+			  vim_item.kind_hl_group = hl_group
+			  return vim_item
+			end
+		  end
+		  return lspkind.cmp_format({ with_text = false })(entry, vim_item)
+		end
 	},
 	mapping = {
 		["<Tab>"] = cmp.mapping(function(fallback)
@@ -67,8 +79,6 @@ cmp.setup({
 		{ name = 'nvim_lua' },
 		{ name = 'vsnip' }, -- For vsnip users.
 		-- { name = 'luasnip' }, -- For luasnip users.
-		-- { name = 'ultisnips' }, -- For ultisnips users.
-		-- { name = 'snippy' }, -- For snippy users.
 	}, {
 		{ name = 'buffer' },
 	})
