@@ -1,0 +1,24 @@
+---
+- name: Install kitty
+  ansible.builtin.package:
+    name: kitty
+    state: latest
+  become: true
+
+- name: Config folder
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.config/kitty"
+  register: config
+
+- name: Create config folder
+  ansible.builtin.file:
+    mode: "0755"
+    path: "{{ ansible_user_dir }}/.config/kitty"
+    state: "directory"
+  when: not config.stat.exists
+
+- name: Copy config file
+  ansible.builtin.copy:
+    mode: "0755"
+    src: "kitty.conf"
+    dest: "{{ ansible_user_dir }}/.config/kitty/kitty.conf"
