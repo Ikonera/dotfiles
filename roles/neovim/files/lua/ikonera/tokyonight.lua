@@ -7,9 +7,9 @@ require"tokyonight".setup({
 	terminal_colors = true,
 	styles = {
 		comments = { italic = true },
-		keywords = { italic = true },
+		keywords = { italic = true, bold = true },
 		functions = {},
-		variables = {},
+		variables = { italic = true },
 		sidebars = "transparent",
 		floats = "dark"
 	},
