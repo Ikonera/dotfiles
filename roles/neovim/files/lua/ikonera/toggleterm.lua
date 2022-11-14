@@ -3,7 +3,6 @@
 
 require"toggleterm".setup({
 	size = 20,
-	open_mapping = "<space>z",
 	autochdir = false,
 	hide_number = false,
 	start_in_insert = true,
@@ -24,8 +23,13 @@ require"toggleterm".setup({
 local terminal = require"toggleterm.terminal".Terminal
 local lazygit = terminal:new({ cmd = "lazygit", hidden = true })
 local lazydocker = terminal:new({ cmd = "lazydocker", hidden = true })
+local nnn = terminal:new({ cmd = "nnn -de", hidden = true })
 
   -- Functions
+
+function nnn_toggle()
+	nnn:toggle()
+end
 
 function lazygit_toggle()
 	lazygit:toggle()
