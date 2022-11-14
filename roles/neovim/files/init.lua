@@ -1,5 +1,6 @@
 require("plugins")
 require("config")
+require("ikonera.dashboard")
 require("ikonera.tokyonight")
 require("ikonera.neodev")
 require("ikonera.lsp")
