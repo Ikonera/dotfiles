@@ -4,6 +4,16 @@
 require"lspsaga".init_lsp_saga({
 	border_style = "rounded",
 	saga_winblend = 0,
+	code_action_icon = "",
+	code_action_lightbulb = {
+		enable = false,
+		enable_in_insert = false,
+		cache_code_action = true,
+		sign = true,
+		update_time = 0,
+		sign_priority = 6,
+		virtual_text = true,
+	},
 })
 
 vim.api.nvim_set_keymap('n', "gh", "<cmd>Lspsaga hover_doc<CR>", { silent = true, noremap = true })

@@ -12,7 +12,7 @@ return require('packer').startup({function(use)
   use 'glepnir/dashboard-nvim'
 
   -- floaterm
-  use 'voldikss/vim-floaterm'
+  use { 'akinsho/toggleterm.nvim', tag = "*" }
 
   -- Colorschemes
   use 'folke/tokyonight.nvim'
