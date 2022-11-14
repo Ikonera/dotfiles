@@ -4,6 +4,7 @@ default_roles:
   - github_cli
   - curl
   - zsh
+  - kitty
   - spaceship
   - flameshot
   - doppler
@@ -30,7 +31,6 @@ default_roles:
   - lazygit
   - lazydocker
   - rustup
-  - alacritty
   - tmux
   - picom
   - paru
