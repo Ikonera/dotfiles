@@ -86,8 +86,7 @@ return require('packer').startup({function(use)
   -- Others...
   use 'kyazdani42/nvim-web-devicons'
   use {'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-  use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
-  use 'arkav/lualine-lsp-progress'
+  use 'tamton-aquib/staline.nvim'
   use 'folke/neodev.nvim'
   use 'davidgranstrom/nvim-markdown-preview'
   use 'rcarriga/nvim-notify'
