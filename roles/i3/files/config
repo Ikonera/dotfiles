@@ -34,7 +34,7 @@ exec --no-startup-id nm-applet
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+a kill
@@ -214,8 +214,6 @@ bindsym $mod+r mode "resize"
 bindsym $mod+a exec rofi -show window
 bindsym $mod+x exec flameshot gui
 
-bindsym $mod+n exec "alacritty -e ls ~/Nextcloud"
-
 bindsym $mod+ctrl+u exec "setxkbmap us"
 bindsym $mod+ctrl+f exec "setxkbmap fr"
 
@@ -223,7 +221,7 @@ bindsym $mod+p exec "sh ~/.config/scripts/toggle-picom.sh"
 
 for_window [class="^.*"] border pixel 0
 
-for_window [class="Alacritty"] move container to workspace $ws1, focus
+for_window [class="kitty"] move container to workspace $ws1, focus
 assign [class="Brave-browser"] $ws2
 assign [class="KeePassXC"] $ws3
 for_window [class="jetbrains-phpstorm"] move container to workspace $ws4
@@ -241,11 +239,11 @@ gaps outer 6
 smart_gaps off
 
 exec nitrogen --restore
-exec_always --no-startup-id clipcatd
+# exec_always --no-startup-id clipcatd
 exec_always --no-startup-id "killall polybar -q; sh ~/.config/polybar/launch.sh --forest &>/dev/null"
 exec xset r rate 250
 exec setxkbmap us
-exec alacritty
+exec kitty
 exec keepassxc
 exec brave
 exec nextcloud
