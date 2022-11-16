@@ -15,11 +15,13 @@ board.custom_header = {
 }
 
 board.custom_center = {
-	{ icon = "   ", desc = "Open workspace files          ", action = "Telescope find_files find_command=rg" },
+	{ icon = "   ", desc = "Open workspace files          ", action = "Telescope find_files" },
+	{ icon = "   ", desc = "Open saved projects           ", action = "Telescope project" },
+	{ icon = "   ", desc = "Navigate repositories         ", action = "Telescope repo" },
 	-- { icon = "", desc = "", action = "" },
 	-- { icon = "", desc = "", action = "" },
 	-- { icon = "", desc = "", action = "" },
-	-- { icon = "", desc = "", action = "" },
-	-- { icon = "", desc = "", action = "" },
-	-- { icon = "   ", desc = "Open personnal dotfiles       ", action = "" },
+	{ icon = "   ", desc = "Open personnal dotfiles       ", action = "Telescope projects dotfiles" },
 }
+
+board.custom_footer = {}

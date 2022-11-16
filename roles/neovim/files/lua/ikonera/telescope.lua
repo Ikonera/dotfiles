@@ -16,6 +16,15 @@ telescope.setup({
 			".vscode/",
 		},
 	},
+	extensions = {
+		repo = {
+			list = {
+				search_dirs = {
+					"~/Lab",
+				}
+			}
+		}
+	}
 })
 
 telescope.load_extension 'file_browser'
