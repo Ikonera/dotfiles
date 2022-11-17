@@ -21,6 +21,7 @@ default_roles:
   - aws_cli
   - rofi
   - i3
+  - polybar
   - picom
   - scripts
   - obsidian

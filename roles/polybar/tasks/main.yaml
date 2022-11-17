@@ -1,0 +1,17 @@
+---
+- name: Verify installation
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.config/polybar"
+  register: install
+
+- name: Install polybar
+  ansible.builtin.package:
+    name: polybar
+    state: latest
+  become: true
+  when: not install.stat.exists
+
+- name: Copy files
+  ansible.builtin.copy:
+    src: "polybar"
+    dest: "{{ ansible_user_dir }}/.config/"
