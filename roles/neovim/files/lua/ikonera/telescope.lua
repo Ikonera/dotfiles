@@ -14,6 +14,7 @@ telescope.setup({
 			".next/",
 			".idea/",
 			".vscode/",
+			"target/",
 		},
 	},
 	extensions = {
