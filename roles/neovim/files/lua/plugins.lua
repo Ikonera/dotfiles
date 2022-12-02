@@ -27,9 +27,10 @@ return require('packer').startup({function(use)
   use {'windwp/nvim-autopairs'}
   use 'terrortylor/nvim-comment'
 
-  -- Prettier
+  -- Prettier / eslint
   use 'MunifTanjim/prettier.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
+  use 'MunifTanjim/eslint.nvim'
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
