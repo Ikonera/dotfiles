@@ -16,6 +16,7 @@ return require('packer').startup({function(use)
 
   -- Colorschemes
   use 'folke/tokyonight.nvim'
+  use 'EdenEast/nightfox.nvim'
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
