@@ -17,6 +17,9 @@ echo "Generating fstab..."
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "Fstab generation successfull !"
 
+echo "Enter arch-chroot."
+exec arch-chroot
+
 echo "Setting localtime..."
 echo "Enter your Region and City (format 'Region/City') : "
 read LOCALTIME
